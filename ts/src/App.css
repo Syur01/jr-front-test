@@ -54,6 +54,11 @@ body {
   transition: all var(--transition-speed) ease;
 }
 
+/* Add this CSS for component Title */
+.title{
+  color: 4a6fa5;
+}
+
 /* Mobile: Full screen */
 @media (max-width: 768px) {
   .container {

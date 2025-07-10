@@ -75,8 +75,8 @@ Si tienes alguna pregunta sobre la prueba, no dudes en contactarnos por correo e
 ## Lista de Tareas
 
 - [ ✅ ] Corregir la funcionalidad de la tecla Enter en el componente InputSection
-- [ ] Añadir la clase CSS correcta al componente Title
-- [ ] Corregir la prueba para el componente HttpStatusChecker
+- [ ✅ ] Añadir la clase CSS correcta al componente Title
+- [ ✅ ] Corregir la prueba para el componente HttpStatusChecker
 - [ ] Corregir el problema de visualización del contenido del modal
 - [ ✅ ] Centrar la aplicación en la vista de escritorio
 - [ ] Implementar la validación de URL y verificación de estado
