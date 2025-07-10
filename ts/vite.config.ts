@@ -5,6 +5,10 @@ import { configDefaults } from 'vitest/config'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  // Agregue el server solo para que se abra automaticamente el navegador
+  server: {
+    open: true
+  },
   test: {
     globals: true,
     environment: 'jsdom',
