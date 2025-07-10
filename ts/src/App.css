@@ -73,10 +73,7 @@ body {
     max-width: none;
     position: relative;
   }
-  
-  .status-info {
-    display: none;
-  }
+    /* I deleted the .status-info to display information on mobile  */
 }
 
 h1 {
