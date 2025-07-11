@@ -80,7 +80,7 @@ Si tienes alguna pregunta sobre la prueba, no dudes en contactarnos por correo e
 - [ ✅ ] Corregir el problema de visualización del contenido del modal
 - [ ✅ ] Centrar la aplicación en la vista de escritorio
 - [ ✅ ] Implementar la validación de URL y verificación de estado
-- [ ] Añadir un botón para abrir URLs válidas en una nueva pestaña
+- [ ✅ ] Añadir un botón para abrir URLs válidas en una nueva pestaña
 - [ ] Crear un hook personalizado de React para el seguimiento del historial de estados
 - [ ] Integrar una biblioteca de gráficos e implementar la visualización del historial
 - [ ] Asegurar que todas las pruebas pasen

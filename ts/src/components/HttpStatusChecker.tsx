@@ -167,7 +167,8 @@ const HttpStatusChecker: React.FC = () => {
             <InfoButton onClick={() => setIsModalOpen(true)} />
           )}
 
-          <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          {/* Agregue la url={inputValue} para verificar el contenido del modal si empieza con http o https para mostrar el boton con la url */}
+          <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} url={inputValue}> 
             <StatusInfo
               category={statusCategory}
               trafficLightStatus={trafficLightStatus}

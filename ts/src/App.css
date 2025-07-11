@@ -309,7 +309,20 @@ button:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   animation: slideUp 0.3s ease;
 }
-
+/* Agregue un css para el .modal-content-url y .modal-close-url para asi poder diferenciarlos tanto  */
+.modal-content-url {
+  background-color: white;
+  border-radius: 12px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
 .modal-close {
   position: absolute;
   top: 10px;
@@ -320,6 +333,23 @@ button:hover {
   cursor: pointer;
   color: #666;
   width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.modal-close-url {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  color: #666;
   height: 30px;
   display: flex;
   align-items: center;

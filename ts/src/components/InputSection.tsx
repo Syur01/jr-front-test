@@ -17,10 +17,10 @@ const InputSection: React.FC<InputSectionProps> = ({
       <input
         type="text"
         value={inputValue}
-        pattern="https?://.+"  // Agregue para que acepte URLs completas
+        pattern="https?://.+"  // Agregue un parametro para que acepte URL
         onChange={(e) => onInputChange(e.target.value)} 
         placeholder="Enter HTTP status code or name"
-        onKeyDown={(e) => {       // agregue para que acepte la tecla Enter 
+        onKeyDown={(e) => {       // Agregue una funcionalidad para que acepte la tecla Enter 
           if(e.key === 'Enter'){
             onCheckStatus();
           }
