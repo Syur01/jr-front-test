@@ -82,7 +82,7 @@ Si tienes alguna pregunta sobre la prueba, no dudes en contactarnos por correo e
 - [ ✅ ] Implementar la validación de URL y verificación de estado
 - [ ✅ ] Añadir un botón para abrir URLs válidas en una nueva pestaña
 - [ ✅ ] Crear un hook personalizado de React para el seguimiento del historial de estados
-- [ ] Integrar una biblioteca de gráficos e implementar la visualización del historial
-- [ ] Asegurar que todas las pruebas pasen
+- [ ✅ ] Integrar una biblioteca de gráficos e implementar la visualización del historial
+- [ ✅ ] Asegurar que todas las pruebas pasen
 
 **Nota**: Si bien esperamos que completes todas las tareas, entendemos que algunas pueden ser desafiantes. Si te quedas atascado en una tarea en particular, puedes pasar a la siguiente y volver más tarde. Lo importante es que demuestres tu enfoque de resolución de problemas y habilidades de codificación. ¡Haz tu mejor esfuerzo!
