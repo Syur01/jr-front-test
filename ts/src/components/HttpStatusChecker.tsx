@@ -122,10 +122,12 @@ const HttpStatusChecker: React.FC = () => {
       } else {
         setTrafficLightStatus("orange");
         setStatusCategory("invalid");
+        addStatus(-1);
       }
     } else {
       setTrafficLightStatus("orange");
       setStatusCategory("invalid");
+      addStatus(-1);
     }
     /** Esto es lo que modifique para que acepte el http o https y que no acepte simbolos
      * tambien que sea accesible solo cuando despues de http:// + algun caracter, sino no lo acepta
@@ -172,8 +174,8 @@ const HttpStatusChecker: React.FC = () => {
           {trafficLightStatus !== "off" && (
             <>
               <InfoButton onClick={() => setIsModalOpen(true)} />
-                {/* Agregue el statusHistoryWrapper para mostrar un historial de forma sencilla */}
-              <StatusHistoryWrapper history={history} /> 
+              {/* Agregue el statusHistoryWrapper para mostrar un historial de forma sencilla */}
+              <StatusHistoryWrapper history={history} />
             </>
           )}
 
