@@ -5,6 +5,8 @@ import TrafficLight from "./TrafficLight";
 import StatusInfo from "./StatusInfo";
 import InfoButton from "./InfoButton";
 import Modal from "./Modal";
+import { useStatusHistory } from "./StatusHistory";
+import StatusHistoryWrapper from "./StatusHistoryInfo";
 
 type TrafficLightStatus = "green" | "orange" | "red" | "off";
 type StatusCodeCategory = "2xx" | "3xx" | "4xx" | "5xx" | "invalid";
@@ -57,6 +59,7 @@ const HttpStatusChecker: React.FC = () => {
   const [statusCategory, setStatusCategory] =
     useState<StatusCodeCategory>("invalid");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { addStatus, history } = useStatusHistory();
   const [isMobile, setIsMobile] = useState(false);
 
   // Check if the device is mobile based on screen width
@@ -102,6 +105,8 @@ const HttpStatusChecker: React.FC = () => {
 
     // Determine the status category
     if (statusCode !== null) {
+      addStatus(statusCode);
+
       if (statusCode >= 200 && statusCode < 300) {
         setTrafficLightStatus("green");
         setStatusCategory("2xx");
@@ -122,7 +127,7 @@ const HttpStatusChecker: React.FC = () => {
       setTrafficLightStatus("orange");
       setStatusCategory("invalid");
     }
-    /** Esto es lo que modifique para que acepte el http o https y que no acepte simbolos 
+    /** Esto es lo que modifique para que acepte el http o https y que no acepte simbolos
      * tambien que sea accesible solo cuando despues de http:// + algun caracter, sino no lo acepta
      */
     const forbiddenSymbols = ["+", "@", "%", "=", "&", "#", "$", "*", "!", "?"];
@@ -133,7 +138,8 @@ const HttpStatusChecker: React.FC = () => {
 
     if (
       (inputValue.startsWith("http://") || inputValue.startsWith("https://")) &&
-      !hasForbiddenSymbol && /[a-zA-Z]/.test(afterProtocol)
+      !hasForbiddenSymbol &&
+      /[a-zA-Z]/.test(afterProtocol)
     ) {
       setTrafficLightStatus("green");
     } else if (hasForbiddenSymbol) {
@@ -164,11 +170,19 @@ const HttpStatusChecker: React.FC = () => {
       ) : (
         <>
           {trafficLightStatus !== "off" && (
-            <InfoButton onClick={() => setIsModalOpen(true)} />
+            <>
+              <InfoButton onClick={() => setIsModalOpen(true)} />
+                {/* Agregue el statusHistoryWrapper para mostrar un historial de forma sencilla */}
+              <StatusHistoryWrapper history={history} /> 
+            </>
           )}
 
           {/* Agregue la url={inputValue} para verificar el contenido del modal si empieza con http o https para mostrar el boton con la url */}
-          <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} url={inputValue}> 
+          <Modal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            url={inputValue}
+          >
             <StatusInfo
               category={statusCategory}
               trafficLightStatus={trafficLightStatus}
